@@ -10,7 +10,7 @@ spark = SparkSession.builder.master("local[1]").appName("WeatherGame").getOrCrea
 
 # Random data generation for all possible columns
 #
-superset_df = spark.read.csv("/mnt/c/Users/Bhavesh Patel/Downloads/au.csv", header = True, inferSchema = True) \
+superset_df = spark.read.csv("/mnt/c/Users/Bhavesh Patel/Downloads/Input.csv", header = True, inferSchema = True) \
 .withColumn('elevation', rand()*115 + 5) \
 .withColumn('temperature', rand()*70 - 23) \
 .withColumn('pressure', rand()*200 + 900) \
